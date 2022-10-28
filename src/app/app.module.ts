@@ -10,7 +10,12 @@ import { UserComponent } from './users/user/user.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { ManagerComponent } from './manager/manager.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 // import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 
 @NgModule({
@@ -21,12 +26,18 @@ import { FormsModule } from '@angular/forms';
     UsersComponent,
     UserComponent,
     UserListComponent,
+    HomeComponent,
+    LoginComponent,
+    AdminComponent,
+    ManagerComponent,
+    PagenotfoundComponent,
     // EmployeeListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule

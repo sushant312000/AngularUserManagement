@@ -1,0 +1,49 @@
+<!-- Reactive form --Model driven approach -->
+<div class="container">
+    <div class="form-group">
+        <h3>
+            User management system: Log in
+        </h3>
+        <hr>
+        <!-- Reactive form -->
+        <form action="" [formGroup]="loginForm" (ngSubmit)="loginCredentials()" class="form-control">
+            <!-- UserName -->
+            <div>
+                <input type="text" placeholder="Enter user name" formControlName="userName" autocomplete="off" required>
+            </div>
+
+            <!-- User name validation message -->
+            <div *ngIf="isSubmitted && formControls.userName.errors">
+                <div *ngIf="formControls.userName.error.required" style="color:red; text-align: left;" class="loginError">
+                    User name is required
+                </div>
+            </div>
+
+            <br>
+            <!-- Password -->
+            <div>
+                <input type="password" placeholder="Enter user password" formControlName="password" autocomplete="off"
+                    required>
+            </div>
+
+            <!-- User password validation message -->
+            <div *ngIf="isSubmitted && formControls.password.errors">
+                <div *ngIf="formControls.password.error.required" style="color:red; text-align: left;">
+                    User password is required
+                </div>
+            </div>
+            <br>
+
+            <!-- submit -->
+            <div>
+                <button class="btn btn-md btn-outline-primary" (click)="loginCredentials">
+                    <i class="fa fa-sign-in"></i>
+                    Login
+                </button>
+            </div>
+            <div *ngIf="error" class="loginError">
+                {{error}}
+            </div>
+        </form>
+    </div>
+</div>
